@@ -29,6 +29,13 @@ analyzer:
     - "**/web/**"
     - "**/test/**"
     - "**/integration_test/**"
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
   strong-mode:
     implicit-casts: true
     implicit-dynamic: false

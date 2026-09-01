@@ -15,6 +15,16 @@ subprojects {
     val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
     project.layout.buildDirectory.value(newSubprojectBuildDir)
 }
+
+// Register this BEFORE evaluationDependsOn forces early evaluation
+subprojects {
+    afterEvaluate {
+        extensions.findByType(com.android.build.gradle.LibraryExtension::class.java)?.let {
+            it.compileSdk = 36
+        }
+    }
+}
+
 subprojects {
     project.evaluationDependsOn(":app")
 }

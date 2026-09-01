@@ -9,41 +9,33 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  go_router: ^17.1.0
-  internet_connection_checker_plus: ^2.9.1+2
-  dio: ^5.9.2
-  fpdart: ^1.2.0
-  equatable: ^2.0.7
-  flutter_riverpod: ^3.2.1
-  hive_ce: ^2.19.3
-  hive_ce_flutter: ^2.3.4
-  flutter_svg: ^2.2.4
-  flutter_animate: ^4.5.2
-  smooth_page_indicator: ^2.0.1
-  flutter_local_notifications: ^17.2.2
-  url_launcher: ^6.3.1
-  permission_handler: ^12.0.1
-  flutter_native_splash: ^2.4.7
   bootstrap:
     git:
-      url: https://github.com/AudioRelayX/app_bootstrap
+      url: https://github.com/AudioRelayXX/app_bootstrap
       ref: master
+  tapper:
+    git:
+      url: https://github.com/AudioRelayXX/tapper
+      ref: master
+  framer:
+    git:
+      url: https://github.com/AudioRelayXX/framer
+      ref: master
+  forge:
+    git:
+      url: https://github.com/AudioRelayXX/forge
+      ref: master
+  trebuchet:
+    git:
+      url: https://github.com/AudioRelayXX/trebuchet
+      ref: master
+  url_launcher: ^6.3.2
+  shared_preferences: ^2.5.5
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
 
-  # Code Generation
-  build_runner: ^2.12.2
-  hive_ce_generator: ^1.11.1
-
 
 flutter:
   uses-material-design: true
-
-  assets:
-    - assets/
-    - assets/images/
-    - assets/icons/
-    - .env
-

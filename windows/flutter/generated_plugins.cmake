@@ -3,8 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  connectivity_plus
-  permission_handler_windows
+  opus_flutter_windows
   url_launcher_windows
 )
 
