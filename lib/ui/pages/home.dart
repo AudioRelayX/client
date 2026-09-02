@@ -96,7 +96,7 @@ class _ClientMainPageState extends State<ClientMainPage> {
     );
   }
 
-  void _connectToIp() {
+  void _connectToIp() async {
     final ip = _ipController.text.trim();
 
     if (ip.isEmpty) {
@@ -108,7 +108,9 @@ class _ClientMainPageState extends State<ClientMainPage> {
       return;
     }
 
-    // TODO: Connect to server using the IP address.
+    final AudioClient client =
+        AudioClient(destinationAddress: _ipController.text.trim());
+    await client.init();
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -121,11 +123,7 @@ class _ClientMainPageState extends State<ClientMainPage> {
     // TODO: Open microphone/source selection.
   }
 
-  void _selectApps() {
-    AudioClient client =
-        AudioClient(destinationAddress: _ipController.text.trim());
-    client.init();
-  }
+  void _selectApps() {}
 
   @override
   Widget build(BuildContext context) {

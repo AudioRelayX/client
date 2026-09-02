@@ -44,19 +44,20 @@ class AudioClient {
     );
 
     _captureSubscription = _tapper.audioStream.listen(_handlePcmChunk);
-
+    _sender.start();
     await _tapper.startCapture(
       sampleRate: format.sampleRate,
       channelCount: format.channels,
       streamToDart: true,
     );
-    _sender.start();
   }
 
   void _handlePcmChunk(Uint8List chunk) {
     for (final frame in _framer.addChunk(chunk)) {
       final Uint8List opusPacket = _encoder.encode(frame);
-      _sender.send(opusPacket);
+      if (_sender.isStarted) {
+        _sender.send(opusPacket);
+      }
     }
   }
 
